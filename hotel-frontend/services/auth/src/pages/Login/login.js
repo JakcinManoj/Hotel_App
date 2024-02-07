@@ -29,11 +29,13 @@ const formData = [
     name: "email",
     label: "Email",
     type: "text",
+    id: "email",
   },
   {
     name: "password",
     label: "Password",
     type: "password",
+    id: "password",
   },
 ];
 

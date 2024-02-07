@@ -37,6 +37,13 @@ yarn start
 
 the app will run on http://localhost:9000
 
+
+## Code Testing
+
+For ***Unit Testing*** use `yarn test`
+
+For ***Automation Testing*** use `yarn cypress`
+
 ## Project Structure
 
 ```
