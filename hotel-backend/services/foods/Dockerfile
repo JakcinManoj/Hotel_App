@@ -1,13 +1,15 @@
 # Pull base image.
-FROM node:latest
+FROM node:12.13.0
 
 COPY . /src
 
 WORKDIR /src
 
-RUN npm install
+RUN npm install --global yarn
+
+RUN yarn install
 
 # Binds to port 4002
 EXPOSE  4002
 
-CMD npm run dev
+CMD ["yarn", "start";"]
