@@ -12,4 +12,4 @@ RUN yarn install
 # Binds to port 4002
 EXPOSE  4000
 
-CMD ["yarn", "run", "dev";]
+CMD ["yarn", "run", "dev"]
