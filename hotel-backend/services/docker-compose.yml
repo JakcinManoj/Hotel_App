@@ -1,0 +1,27 @@
+version: "3"
+services:
+  foods:
+    build:
+      context: ./foods
+      dockerfile: Dockerfile
+    ports:
+      - 4002:4002
+
+  users:
+    build:
+      context: ./users
+      dockerfile: Dockerfile
+    ports:
+      - 4001:4001
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    depends_on:
+      - foods
+      - users
+
+

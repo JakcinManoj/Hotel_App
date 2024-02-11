@@ -1,15 +1,15 @@
-# Pull base image.
 FROM node:12.13.0
 
-COPY . /src
+WORKDIR /usr/src/app
 
-WORKDIR /src
+COPY package*.json  yarn.lock ./
 
-RUN npm install --global yarn
+RUN yarn
 
-RUN yarn install
+COPY . .
 
-# Binds to port 4002
-EXPOSE  4001
+ENV FILE .env
 
-CMD ["yarn", "run", "dev"]
+EXPOSE 4001
+
+CMD [ "yarn", "start" ]
