@@ -1,0 +1,50 @@
+version: "3"
+services:
+
+  auth-helper:
+    build:
+      context: ./auth-helper
+      dockerfile: Dockerfile
+    ports:
+      - 9001:9001
+
+  auth:
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    ports:
+      - 9002:9002
+
+  styleguide:
+    build:
+      context: ./styleguide
+      dockerfile: Dockerfile
+    ports:
+      - 9003:9003
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 9004:9004
+
+  food:
+    build:
+      context: ./food
+      dockerfile: Dockerfile
+    ports:
+      - 9005:9005
+
+  root-config:
+    build:
+      context: ./root-config
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    depends_on:
+      - api
+      - auth
+      - auth-helper
+      - food
+      - styleguide
