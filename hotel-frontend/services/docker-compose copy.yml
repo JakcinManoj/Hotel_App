@@ -5,40 +5,62 @@ services:
     build:
       context: ./auth-helper
       dockerfile: Dockerfile
-    network_mode: host
+    ports:
+      - 9001:9001
+    networks:
+      - mynet
 
   auth:
     build:
       context: ./auth
       dockerfile: Dockerfile
-    network_mode: host
+    ports:
+      - 9002:9002
+    networks:
+      - mynet   
 
   styleguide:
     build:
       context: ./styleguide
       dockerfile: Dockerfile
-    network_mode: host
+    ports:
+      - 9003:9003
+    networks:
+      - mynet
 
   api:
     build:
       context: ./api
       dockerfile: Dockerfile
-    network_mode: host
+    ports:
+      - 9004:9004
+    networks:
+      - mynet
 
   food:
     build:
       context: ./food
       dockerfile: Dockerfile
-    network_mode: host
+    ports:
+      - 9005:9005
+    networks:
+      - mynet
 
   root-config:
     build:
       context: ./root-config
       dockerfile: Dockerfile
+    ports:
+      - 9000:9000
     depends_on:
       - api
       - auth
       - auth-helper
       - food
       - styleguide
-    network_mode: host
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge

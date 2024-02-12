@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4002:4002
+    networks:
+      - mynetwork
 
   users:
     build:
@@ -13,6 +15,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4001:4001
+    networks:
+      - mynetwork
 
   gateway:
     build:
@@ -23,5 +27,10 @@ services:
     depends_on:
       - foods
       - users
+    networks:
+      - mynetwork
 
+networks:
+  mynetwork:
+    driver: bridge
 
