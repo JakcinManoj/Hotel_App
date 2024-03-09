@@ -11,14 +11,12 @@
     "deploy": "yarn bootstrap && yarn build",
     "preserve": "yarn build",
     "serve": "npx serve deploy -s -n -C",
-    "postinstall": "lerna bootstrap",
-    "test": "mocha"
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {
-    "lerna": "^3.22.1",
-    "mocha": "9.1.3"
+    "lerna": "^3.22.1"
   }
 }

@@ -1,17 +1,11 @@
-FROM node:12.13.0
+FROM node:latest
 
-WORKDIR /usr/src/app
+COPY . /src
 
-COPY package*.json  yarn.lock ./
+WORKDIR /src
 
-RUN yarn
+RUN npm install
 
-COPY . .
-
-ENV FILE .env
-
-EXPOSE 4001 
-EXPOSE 4002
 EXPOSE 4000
 
-CMD [ "yarn", "dev" ]
+CMD npm run dev

@@ -37,13 +37,6 @@ yarn start
 
 the app will run on http://localhost:9000
 
-
-## Code Testing
-
-For ***Unit Testing*** use `yarn test`
-
-For ***Automation Testing*** use `yarn cypress`
-
 ## Project Structure
 
 ```
@@ -61,6 +54,3 @@ hotel-backend\
     |--styleguide\  # Common components and styles
 
 ```
-
-
-Refer This Doc for further Understanding [Docs](https://docs.google.com/document/d/1wgoNeY6qE3Zt3yvmQAW7PLZRWcKzAHGBW7fQ2gtYAjM/edit)
