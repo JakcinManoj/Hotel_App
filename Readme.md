@@ -61,3 +61,6 @@ hotel-backend\
     |--styleguide\  # Common components and styles
 
 ```
+
+
+Refer This Doc for further Understanding [Docs](https://docs.google.com/document/d/1wgoNeY6qE3Zt3yvmQAW7PLZRWcKzAHGBW7fQ2gtYAjM/edit)
